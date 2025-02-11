@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Открой Анабар — туры по Арктике, приключения, северное сияние, культура и традиции.">
+  <title>Открой Анабар | Арктическое приключение</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    .to-animate {
+      opacity: 0;
+    }
+    .navbar {
+      background-color: #001f3f;
+    }
+    .navbar-brand, .navbar-nav .nav-link {
+      color: #fff !important;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ccc !important;
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://avatars.mds.yandex.net/i?id=7c07ba6aa5a14dc01d7749213c6660d2_l-8959338-images-thumbs&n=13') no-repeat center center/cover;
+      background-size: cover;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+    }
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .section h2 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #001f3f;
+    }
+    .section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    .card {
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+    .testimonial {
+      background-color: #f8f8f8;
+      padding: 60px 20px;
+    }
+    .testimonial .card {
+      margin: 15px;
+    }
+    .testimonial .card-img-top {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      object-fit: cover;
+      margin: 20px auto;
+    }
+    .contact-form label {
+      font-weight: 500;
+    }
+    footer {
+      background-color: #001f3f;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ccc;
+    }
+    .map-section {
+      height: 400px;
+      background-color: #eee;
+    }
+    .map-section iframe,
+    .map-section #yandexMap {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .scroll-btn {
+      margin-top: 20px;
+    }
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Открой Анабар ™</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#hero">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
+          <li class="nav-item"><a class="nav-link" href="#routes">Маршруты</a></li>
+          <li class="nav-item"><a class="nav-link" href="#brand">Фирменный стиль</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+          <li class="nav-item"><a class="nav-link" href="#map">Карта</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header id="hero" class="hero">
+    <div class="hero-content container">
+      <h1 class="animate__animated animate__fadeInDown">Анабар – край алмазов, Арктики и приключений!</h1>
+      <p class="animate__animated animate__fadeInUp animate__delay-1s">Погрузитесь в мир уникальных путешествий и откройте для себя настоящую Арктику.</p>
+      <a href="#routes" class="btn btn-primary btn-lg animate__animated animate__fadeInUp animate__delay-2s">Узнать больше</a>
+    </div>
+  </header>
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="to-animate" data-animation="fadeInUp">О проекте</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="to-animate" data-animation="fadeInLeft">
+            Мы — команда "ГРЕМЛИНЫ", специалисты в области туризма, приключений и экотуризма.
+            Наша миссия – развивать туризм в Анабарском районе, сохраняя уникальную природу, культуру и традиции коренных народов.
+            Мы стремимся предоставлять нашим клиентам незабываемые впечатления и обеспечить безопасность на каждом этапе путешествия.
+            ООО.ТМЫВ.ДЕНЕГ
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://avatars.mds.yandex.net/i?id=59a0bc05e50c88e7b732fb6542915873_l-5327796-images-thumbs&n=13" alt="О проекте" class="img-fluid to-animate" data-animation="fadeInRight">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="routes" class="section bg-light">
+    <div class="container">
+      <h2 class="to-animate" data-animation="fadeInUp">Туристические маршруты</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card to-animate" data-animation="zoomIn">
+            <img src="https://avatars.mds.yandex.net/i?id=c62af948f30e0f81de6e853951e989abcf434b58-11464670-images-thumbs&n=13" class="card-img-top" alt="Северное сияние">
+            <div class="card-body">
+              <h5 class="card-title">Северное сияние</h5>
+              <p class="card-text">Насладитесь магией полярного сияния на фоне величественных арктических пейзажей.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#route1Modal">Подробнее</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card to-animate" data-animation="zoomIn" data-delay="1s">
+            <img src="https://avatars.mds.yandex.net/i?id=84cb8608472f9be4daa3294dd834bd9d_l-9290563-images-thumbs&n=13" class="card-img-top" alt="Алмазный путь">
+            <div class="card-body">
+              <h5 class="card-title">Алмазный путь</h5>
+              <p class="card-text">Экспедиция по месторождениям алмазов с уникальными экскурсиями и активностями.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#route2Modal">Подробнее</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card to-animate" data-animation="zoomIn" data-delay="2s">
+            <img src="https://www.iphones.ru/wp-content/uploads/2021/12/XXXVIII_1_full_jimmynelson.-Large.jpeg" class="card-img-top" alt="Кочевой след">
+            <div class="card-body">
+              <h5 class="card-title">Кочевой след</h5>
+              <p class="card-text">Путешествие по маршрутам, где древние традиции встречаются с современностью.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#route3Modal">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="modal fade" id="route1Modal" tabindex="-1" aria-labelledby="route1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="route1ModalLabel">Северное сияние</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://ysia.ru/wp-content/uploads/2022/02/Allaiha1.jpg" class="img-fluid mb-3" alt="Северное сияние">
+          <p>
+            Этот маршрут позволит вам насладиться волшебным зрелищем полярного сияния в самом сердце Арктики.
+            Программа включает проживание в традиционных чумах, экскурсии с опытными гидами и разнообразные активности для любителей приключений.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="route2Modal" tabindex="-1" aria-labelledby="route2ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="route2ModalLabel">Алмазный путь</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://avatars.mds.yandex.net/i?id=1d8cabfbca67d8aa17816484ffe5c9e1_l-7458047-images-thumbs&n=13" class="img-fluid mb-3" alt="Алмазный путь">
+          <p>
+            Маршрут "Алмазный путь" предлагает посетить одно из крупнейших месторождений алмазов, узнать историю их добычи и окунуться в атмосферу неизведанного Севера.
+            Вас ждут увлекательные экскурсии, знакомство с геологическими чудесами и активное участие в экспедициях.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="route3Modal" tabindex="-1" aria-labelledby="route3ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="route3ModalLabel">Кочевой след</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://edu.ru/uploads/media/content/0001/03/thumb_2832_content_gallery.jpeg" class="img-fluid mb-3" alt="Кочевой след">
+          <p>
+            Маршрут "Кочевой след" познакомит вас с культурой и традициями коренных народов — эвенков и долган.
+            Вы посетите традиционные поселения, узнаете ремёсла и примете участие в культурных мероприятиях, которые переносят в прошлое Севера.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="brand" class="section">
+    <div class="container">
+      <h2 class="to-animate" data-animation="fadeInUp">Фирменный стиль</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="to-animate" data-animation="fadeInLeft">
+            О нас
+Добро пожаловать на Открой Анабар ! Мы — команда энтузиастов, увлечённых туризмом в Анабаре . Наша задача разработать уникальный туристический бренд.
+Привлечь внимание путешественников и инвесторов.Продвигать Анабар в соцсетях и интернете.
+Спасибо, что выбрали нас! 
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://ltdfoto.ru/images/2025/02/11/logotip.png" class="img-fluid to-animate" data-animation="fadeInRight">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="section bg-light">
+    <div class="container">
+      <h2 class="to-animate" data-animation="fadeInUp">Контакты</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="to-animate" data-animation="fadeInLeft">
+            Свяжитесь с нами для получения подробной информации, бронирования туров или обсуждения возможностей сотрудничества.
+            Мы всегда открыты для новых идей и предложений!
+          </p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-phone"></i> номер военкомата</li>
+            <li><i class="fas fa-envelope"></i> prochital@gmail.krutoi</li>
+            <li><i class="fas fa-map-marker-alt"></i> Анабарский район, Россия</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <form class="contact-form to-animate" data-animation="fadeInRight">
+            <div class="mb-3">
+              <label for="contactName" class="form-label">Имя</label>
+              <input type="text" class="form-control" id="contactName" placeholder="Ваше имя" required>
+            </div>
+            <div class="mb-3">
+              <label for="contactEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="contactEmail" placeholder="Ваш email" required>
+            </div>
+            <div class="mb-3">
+              <label for="contactMessage" class="form-label">Сообщение</label>
+              <textarea class="form-control" id="contactMessage" rows="5" placeholder="Ваше сообщение" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="map" class="section">
+    <div class="container">
+      <h2 class="to-animate" data-animation="fadeInUp">Карта</h2>
+      <div class="map-section">
+        <div id="yandexMap" style="width: 100%; height: 100%;"></div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Гремлины. Все права защищены нами гремлинами.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const animatedElements = document.querySelectorAll('.to-animate');
+      const observerOptions = {
+        threshold: 0.3
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const animation = entry.target.getAttribute('data-animation') || 'fadeInUp';
+            entry.target.classList.add('animate__animated', `animate__${animation}`);
+            const delay = entry.target.getAttribute('data-delay');
+            if (delay) {
+              entry.target.style.setProperty('--animate-delay', delay);
+            }
+            entry.target.style.opacity = 1;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      animatedElements.forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+  
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=6fce176e-b3f1-4eae-8436-6be8a5a5c970" type="text/javascript"></script>
+  <script type="text/javascript">
+    ymaps.ready(init);
+    function init() {
+      var saskylakhCoords = [71.964, 114.092];
+      var myMap = new ymaps.Map("yandexMap", {
+        center: saskylakhCoords,
+        zoom: 15
+      });
+      var myPlacemark = new ymaps.Placemark(saskylakhCoords, {
+        hintContent: 'Село Саскылах',
+        balloonContent: 'Саскылах, Анабарский район, Россия'
+      });
+      myMap.geoObjects.add(myPlacemark);
+    }
+  </script>
+</body>
+</html>
